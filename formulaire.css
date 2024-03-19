@@ -1,0 +1,182 @@
+body
+{
+    margin: 0px;
+    padding:0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header
+{
+    margin-top: 5px;
+    padding: 10px;
+    background-image:url("images/head.png");
+    background-size: cover;  
+    background-repeat:no-repeat;
+}
+/*footer page principale du site */
+footer 
+{
+    display: flex;
+    justify-content:space-around;
+    border: 1px solid;
+    border-radius:5px;
+    background-color:#DC143C;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 100px;
+}
+footer > a
+{
+    text-decoration: none;
+    text-shadow: 1px 2px 1px white; 
+}
+footer > marquee
+{
+    color: white !important;
+}
+#horaire{
+    color:white;
+    font-size: larger;
+}
+nav
+{
+    font-weight: bold;
+    font-size:x-large;
+}
+#logo-menu
+{
+  display: flex;
+  justify-content:space-between;
+}
+li > a
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+img 
+{
+    max-width: 100%;
+    height: auto; 
+}
+.image{
+    gap:20px;
+}
+li
+{
+ margin: 10px;
+}
+#apropos
+{
+    margin-top: 20px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    letter-spacing: 3px;
+    border: 2px solid;
+    background-color: #DC143C;
+    border-radius: 10px;
+    color: white;
+}
+#apropos > a 
+{
+    text-decoration: none;
+    text-shadow: 2px 2px 2px white;
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    margin-top:30px;
+}
+/*pages avis*/ 
+
+#page-avis{
+  margin-bottom: 120px;
+}
+.page-inscription{
+    margin-bottom: 120px;
+}
+.red{
+    color:green;
+}
+/*pages reparations mécanique / carrosserie*/
+article
+{
+    margin: 15px;
+    padding: 20px;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+.section{
+    margin-top: 10px;
+    padding: 10px;
+
+}
+.section-client{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+/*formulaires*/
+.form
+{
+    padding:10px;
+}
+aside
+{
+    display:flex;
+}
+em
+{
+    color:#00008B;
+}
+.confirmation{
+	display: flex;
+	justify-content: center;
+	
+}
+span{
+    color:red;
+}
+strong{
+    color:red;
+}
+.red{
+    color:red;
+}
+legend{
+    color:#0C273D;
+}
+
+.validation{
+	font-weight: bolder;
+	color: #008000;
+    margin-top:50px;
+    margin-bottom:100px;
+}
+.rdv{
+   margin-top:10px;
+   padding:10px;
+}
+.text-center{
+    text-align: center;
+}
+b{
+    color:#0C273D;
+}
+h1{
+    margin-top: 20px;
+}
+@media screen and (max-width:768) {
+    .container{
+     width:100%;
+    }
+ 
+ }
+ @media screen and (max-width: 768px) {
+
+    #occasion{
+        flex-direction:column
+    }
+}

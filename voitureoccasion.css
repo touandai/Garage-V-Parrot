@@ -1,0 +1,196 @@
+body
+{
+    margin: 0px;
+    padding:0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+}
+header
+{
+    margin-top: 5px;
+    padding: 10px;
+    background-image:url("images/head.png");
+    background-size: cover;  
+    background-repeat:no-repeat;
+}
+/*footer page principale du site */
+footer 
+{
+    display: flex;
+    justify-content:space-around;
+    border: 1px solid;
+    border-radius:5px;
+    background-color:#DC143C;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 100px;
+}
+footer > a
+{
+    text-decoration: none;
+    text-shadow: 1px 2px 1px white;
+    
+}
+#horaire{
+    color:white;
+    font-size: larger;
+}
+#logo-menu
+{
+  display: flex;
+  justify-content:space-between;
+}
+nav
+{
+    font-weight: bold;
+    font-size:x-large;
+}
+
+li > a
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+img 
+{
+    max-width: 100%;
+    height: auto; 
+}
+li
+{
+ margin: 10px;
+}
+#apropos
+{
+    margin-top: 20px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    letter-spacing: 3px;
+    border: 2px solid;
+    background-color: #DC143C;
+    border-radius: 10px;
+    color: white;
+}
+#apropos > a 
+{
+    text-decoration: none;
+    text-shadow: 2px 2px 2px white;
+}
+em{
+    color:#00008b;
+    font-weight: bold;
+}
+#rdv:hover{
+    background-color: #DC143C;
+    color: white;
+}
+/*pages véhicules d'occasion*/
+main {
+    margin:5px;
+    margin:5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+}
+.color-p{
+    color:#00008b;
+}
+#occasion {
+    display: flex;
+    justify-content:center;
+}
+/*barre de recherche par filtre kilometrage, prix, annees*/
+#aside
+{
+    display:flex;
+    justify-content:center;
+}
+#section-recherche
+{
+    margin-top: 15px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+#kilometrage, #prix, #annees
+{
+    display :block;
+}
+#kilometrage> button
+{
+    display: inline;
+}
+#prix > button
+{
+    display: inline;
+}
+#annees > button
+{
+    display: inline;
+}
+/*details info dans main*/
+.detail
+{
+    text-decoration: none;
+    color: white;
+}
+#vehicules
+{
+    font-size:medium;
+}
+#occase
+{
+ text-align: center;
+}
+#informations
+{
+    display: flex;  
+    justify-content:space-around;
+
+}
+/*section carrousel*/
+#carrousel
+{
+    width: 500px;
+    margin:10px;
+    padding:20px;
+}
+.images_box
+{
+    max-width: 100%;
+    height: auto;
+}
+/*section detail annonce */
+#detail
+{
+    width: 500px;
+    margin:10px;
+    display: block;
+    padding: 20px;
+
+}
+main .btn
+{
+  border: none;
+  margin-top:10px;
+}
+.validation{
+	font-weight: bolder;
+	color: green;
+}
+main .btn:hover
+{
+    background-color: #DC143C;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #occasion{
+        flex-direction:column
+    }
+}

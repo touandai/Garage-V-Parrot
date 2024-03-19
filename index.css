@@ -1,0 +1,201 @@
+body
+{
+    margin: 0px;
+    padding:0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header
+{
+    margin-top: 5px;
+    padding: 10px;
+    background-image:url("images/head.png");
+    background-size: cover;  
+    background-repeat:no-repeat;
+}
+/*footer page principale du site */
+footer 
+{
+    display: flex;
+    justify-content:space-around;
+    border: 1px solid;
+    border-radius:5px;
+    background-color:#DC143C;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 100px;
+}
+footer > a
+{
+    text-decoration: none;
+    text-shadow: 1px 2px 1px white; 
+    
+}
+#horaire{
+    color:white;
+    font-size: larger;
+}
+footer > marquee
+{
+    color: white !important;
+}
+nav
+{
+    font-weight: bold;
+    font-size:x-large;
+}
+#logo-menu
+{
+  display: flex;
+  justify-content:space-between;
+}
+
+li > a
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+img 
+{
+    max-width: 100%;
+    height: auto; 
+}
+li
+{
+ margin: 10px;
+}
+#apropos
+{
+    margin-top: 20px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large;
+    letter-spacing: 3px;
+    border: 2px solid;
+    background-color: #DC143C;
+    border-radius: 10px;
+    color: white;
+}
+#apropos > a 
+{
+    text-decoration: none;
+    text-shadow: 2px 2px 2px white;
+}
+/*lien vers page à propos*/
+#propos
+{
+    display: block;
+    margin-top: 50px;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+main  h3
+{
+    font-weight: bold;
+    font-style: oblique;
+}
+
+/*page principale*/
+main
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.temoignage1, .temoignage2, .temoignage3
+{
+   margin :2px;
+   padding:5px;
+   text-align: center;
+}
+article  
+{
+    padding: 10px;
+    text-align: center;
+}
+article > h5
+{
+   margin:30px;
+}
+article > ul > li
+{
+    letter-spacing: 3px;
+}
+em
+{
+    color:#00008b;
+}
+.em{
+    font-weight:700px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: green;
+}
+#occaz
+{
+    background-image:url("images/occase1.png");
+    background-size: cover;  
+    background-repeat:no-repeat;
+    font-size: x-large;
+    text-align: center;
+}
+#occaz > a 
+{
+    text-decoration: none;
+}
+.aside{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+/*page mentions légales*/
+#mentionslegales
+{
+  display: flex; 
+  justify-content:center;
+}
+/*pages véhicules d'occasion*/
+#vehicules
+{
+    font-size: larger;
+}
+#occasions
+{
+border:2px solid;
+border-radius: 20px;
+}
+#occasions
+{
+ display: block;
+}
+#rdv:hover
+{
+    background-color: #DC143C;
+    color: white;
+}
+.btn-primary 
+{
+   margin:5px;
+}
+strong{
+    color: green;
+}
+
+.validation{
+	font-weight: bolder;
+	color: green;
+}
+
+    @media screen and (max-width:678) {
+        .container{
+         width:100%;
+        }
+     
+     }
+
+     @media screen and (max-width: 768px) {
+
+        #occasion{
+            flex-direction:column
+        }
+    }
+
