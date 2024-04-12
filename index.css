@@ -4,8 +4,7 @@ body
     padding:0px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-header
-{
+header{
     margin-top: 5px;
     padding: 10px;
     background-image:url("images/head.png");
@@ -13,44 +12,37 @@ header
     background-repeat:no-repeat;
 }
 /*footer page principale du site */
-footer 
-{
+footer {
     display: flex;
     justify-content:space-around;
+    align-items: center;
     border: 1px solid;
     border-radius:5px;
     background-color:#DC143C;
     font-size: larger;
-    font-weight: bold;
-    margin-top: 100px;
+    letter-spacing: 2px;
+    margin-top: 50px;
 }
-footer > a
-{
+footer > a {
     text-decoration: none;
     text-shadow: 1px 2px 1px white; 
     
 }
 #horaire{
     color:white;
-    font-size: larger;
+    font-size: larger;    
 }
-footer > marquee
-{
-    color: white !important;
-}
-nav
-{
+
+nav{
     font-weight: bold;
     font-size:x-large;
 }
-#logo-menu
-{
+#logo-menu{
   display: flex;
   justify-content:space-between;
 }
 
-li > a
-{
+li > a{
     text-decoration: none;
     color: white;
     padding: 5px;
@@ -60,12 +52,10 @@ img
     max-width: 100%;
     height: auto; 
 }
-li
-{
+li{
  margin: 10px;
 }
-#apropos
-{
+#apropos{
     margin-top: 20px;
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -76,14 +66,12 @@ li
     border-radius: 10px;
     color: white;
 }
-#apropos > a 
-{
+#apropos > a {
     text-decoration: none;
     text-shadow: 2px 2px 2px white;
 }
 /*lien vers page à propos*/
-#propos
-{
+#propos {
     display: block;
     margin-top: 50px;
     padding: 20px;
@@ -121,12 +109,14 @@ article > ul > li
 {
     letter-spacing: 3px;
 }
-em
-{
+em {
     color:#00008b;
+    font-size: medium;
+    letter-spacing: 2px;
+    
 }
 .em{
-    font-weight:700px;
+    font-weight:bold;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: green;
 }
@@ -152,23 +142,20 @@ em
 {
   display: flex; 
   justify-content:center;
+  
 }
 /*pages véhicules d'occasion*/
 #vehicules
 {
     font-size: larger;
 }
-#occasions
-{
-border:2px solid;
-border-radius: 20px;
+#occasions{
+    display: block;
+    border:2px solid;
+    border-radius: 20px;
 }
-#occasions
-{
- display: block;
-}
-#rdv:hover
-{
+
+#rdv:hover{
     background-color: #DC143C;
     color: white;
 }

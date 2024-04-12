@@ -23,7 +23,7 @@ require 'menu.php';
     ?>
     <table class="table table-striped table-bordered">
         <thead>
-                <tr>
+                <tr class="text-center table-primary">
                     <th>Id</th>
                     <th>Marque</th>
                     <th>Modele</th>
@@ -44,7 +44,7 @@ require 'menu.php';
 
             foreach($resultat as $key => $value) {
         ?>
-            <tr>
+            <tr class="text-center">
                 <td><?php echo $value['id'];?></td>
                 <td><?php echo $value['marque']; ?></td>
                 <td><?php echo $value['modele']; ?></td>
@@ -73,9 +73,11 @@ require 'menu.php';
                             }
                         }
                     ?>
-                    <form method="POST" action=""> 
-                        <input type="hidden" name="id" value="<?php echo $value['id']; ?>" readonly="true">
-                          <button type="submit" name="valider" onclick="return confirm('Vous confirmez cette suppression <?php echo $value['id']; ?> ?')">supprimer</button>
+                    <form method="POST" action="">
+                        <input type="hidden" name="id" value="<?php echo $value['id']; ?>" readonly=true>
+
+                          <button class="btn btn-sm btn-danger" type="submit" name="valider" 
+                          onclick="return confirm('Vous confirmez cette suppression <?php echo $value['id']; ?> ?')">supprimer</button>
                     </form>
                 </td>
             </tr>

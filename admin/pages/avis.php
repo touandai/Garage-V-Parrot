@@ -10,15 +10,15 @@ require 'menu.php';
 
                 if(array_key_exists('valider',$_POST))  {
                     
-                    function validation_donnees($donnees){
+                    function validationDonnees($donnees){
                         $donnees = trim($donnees);
                         $donnees = stripslashes($donnees);
                         $donnees = htmlspecialchars($donnees);
                         return $donnees;
                         }
                                 
-                        $id = validation_donnees($_POST['id']);
-                        $statut = validation_donnees($_POST['statut']);
+                        $id = validationDonnees($_POST['id']);
+                        $statut = validationDonnees($_POST['statut']);
 
                         $reqvalider = 'UPDATE public.temoignages SET statut = :statut, date_validation = :date WHERE id = :id';
                         $statement = $conn -> prepare($reqvalider);
@@ -38,10 +38,7 @@ require 'menu.php';
                         else{
                         echo 'une erreur est survenue';die;
                         }
-
                }
-
-
 ?>
 
 <h1>Témoignages et Avis</h1>
@@ -59,7 +56,7 @@ require 'menu.php';
 
     <table class="table table-bordered table-sm table-hover">
         <thead>
-            <tr>
+            <tr class="table-success text-center">
                 <th>Nom</th>
                 <th>Note</th>
                 <th>Commentaires</th>
@@ -71,14 +68,14 @@ require 'menu.php';
 
         <tbody>
         
-        <?php 
+        <?php
         $req = "SELECT * FROM public.temoignages ORDER BY date_avis DESC LIMIT 10";
         $tdr = $conn -> query($req);
         $resultat = $tdr -> fetchAll();
         foreach($resultat as $key => $value) {
         ?>
 
-        <tr>
+        <tr class="text-center">
             <td><?php echo $value['nom']; ?></td>
             <td><?php echo $value['note']; ?></td>
             <td><?php echo $value['commentaires']; ?></td>
@@ -88,7 +85,16 @@ require 'menu.php';
             $datefr = strftime('%d/%m/%Y',strtotime($value['date_avis']));
             echo $datefr ?>
             </td>
-            <td><?php echo $value['statut']; ?></td>
+            <td>
+            <?php
+            $statut = $value['statut'];
+            if ($statut =='En attente de validation'){
+            echo "<span class='invalide'> $statut </span>";
+            }else {
+                echo "<span class='valide'> $statut </span>";
+            }
+            ?>
+            </td>
             <td>
               <!--valider un avis -->
                     <form method="POST" action="">
@@ -98,7 +104,7 @@ require 'menu.php';
                             <option value="">--selectionner--</option>
                             <option value="valider">Valider</option>
                         </select>
-                          <button type="submit" name="valider">Valider</button>
+                          <button class="btn btn-sm btn-success" type="submit" name="valider">Valider</button>
                     </form>
             </td>
         </tr>
@@ -111,4 +117,5 @@ require 'menu.php';
 
 <?php
 require 'commun/footer.php';
-   
+
+?>

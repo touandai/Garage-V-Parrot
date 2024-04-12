@@ -39,20 +39,27 @@ if(array_key_exists('id',$_GET)){
                 ':statut_am' => $_POST['ouverture_matin'],
                 ':statut_pm' => $_POST['ouverture_soir']
             ])){
-               header('location:?pages=horaire&id='.$_GET['id']);
+               header('location:?pages=horaire&id=1');die;
             }
         }
 
 ?>
 
 <main class="container">
+    <?php
+    if(isset($_GET['id']) && ($_GET['id']==1)){
+        ?>
+        <div style="padding: 20px;color: #ffffff;background: green;text-align:center;">horaire mise à jour!</div>
+    <?php
+    }
+    ?>
     <p>Jour : <?php echo $resultat['jour']; ?></p>
-    <p>Matin: 
+    <p>Matin:
         <?php 
             if ($resultat['statut_am'] ==1 ){
-                echo $resultat['heure_debut_am'].'-'. $resultat['heure_de_fin_am']; 
+                echo $resultat['heure_debut_am'].'-'. $resultat['heure_de_fin_am'];
             }else {
-                  echo "Fermé";   
+                  echo "Fermé";
             }
         
         ?>  </p>

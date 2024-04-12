@@ -17,21 +17,17 @@ footer
 {
     display: flex;
     justify-content:space-around;
+    align-items: center;
     border: 1px solid;
     border-radius:5px;
     background-color:#DC143C;
     font-size: larger;
-    font-weight: bold;
-    margin-top: 100px;
+    letter-spacing: 2px;
+    margin-top: 50px;
 }
-footer > a
-{
+footer > a {
     text-decoration: none;
     text-shadow: 1px 2px 1px white; 
-}
-footer > marquee
-{
-    color: white !important;
 }
 #horaire{
     color:white;
@@ -96,9 +92,6 @@ main{
 }
 .page-inscription{
     margin-bottom: 120px;
-}
-.red{
-    color:green;
 }
 /*pages reparations mécanique / carrosserie*/
 article

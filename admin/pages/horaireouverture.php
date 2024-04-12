@@ -18,9 +18,9 @@ require 'menu.php';
 <main class="container">
 
 
-<table class="table table-striped caption-top">
+<table class="table table-striped">
 <thead>
-  <tr>
+  <tr class="table-secondary">
     <th scope="col">Jour</th>
     <th scope="col">Matin</th>
     <th scope="col">Apres-midi</th>
@@ -29,18 +29,15 @@ require 'menu.php';
 </thead>
 <tbody>
 <?php
-
         $req = "SELECT * FROM public.horairesgarages ORDER BY id ASC" ;
-       
         $tdr = $conn -> query($req);
         $resultat = $tdr -> fetchAll();
-
         foreach($resultat as $key => $value) {
 ?>
   <tr>
     <td scope="row"><?php echo $value['jour'];?></td>
     <td>
-    <?php 
+    <?php
           if($value['statut_am'] == 1 ){
             echo $value['heure_debut_am'].' à ' .$value['heure_de_fin_am'];
           }
@@ -59,11 +56,11 @@ require 'menu.php';
           } 
       ?>
     </td>
-    <td><a href="?pages=horaire&id=<?php echo $value['id'];?>">Modifier</a></td>
+    <td><a class="btn btn-sm btn-primary" href="?pages=horaire&id=<?php echo $value['id'];?>">Modifier</a></td>
   </tr>
   <?php
-        }
-    ?>           
+  }
+  ?>
   
 </tbody>
 </table>

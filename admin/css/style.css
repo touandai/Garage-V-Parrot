@@ -123,3 +123,9 @@ strong{
   background-color:green;
   font-weight: bolder;
 }
+.valide{
+  color:green;
+}
+.invalide{
+  color:red;
+}

@@ -11,8 +11,7 @@
 <body>
      <header class="container">
         <div id="logo-menu" class="container">
-            <img src="images/logo.png">
-        
+            <img class="rounded" src="images/logo.png" alt="logo"/>
             <nav class="navbar">
                 <ul>
                    <li class="btn btn-danger"><a href="index.php">Services</a>  
