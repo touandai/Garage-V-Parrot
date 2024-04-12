@@ -6,7 +6,7 @@ session_start();
 require '../connexion.php';
 
 //Racine du projet//
-$document_root ="Garage-Parrot";
+$document_root ="Garage-V-Parrot";
 
 $pages = (isset($_GET['pages'])) ? $_GET['pages'] : "login";
 

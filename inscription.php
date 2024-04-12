@@ -15,6 +15,21 @@ if(array_key_exists('envoyer',$_POST)) {
       }
       */
 
+         function validation_donnees($donnees){
+
+            $donnees = trim($donnees);
+            $donnees = stripslashes($donnees);
+            $donnees = htmlspecialchars($donnees);
+            return $donnees;
+        }
+           
+            $nom = validation_donnees($_POST['nom']);
+            $prenom = validation_donnees($_POST['prenom']);
+            $email = validation_donnees($_POST['email']);
+			$password = validation_donnees($_POST['password']);
+ 
+			
+			
         $reqInsert = "INSERT INTO public.users (nom, prenom, email, password) 
         values (:nom, :prenom, :email, :password)";
         $tbr = $conn -> prepare($reqInsert);

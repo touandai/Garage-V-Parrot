@@ -15,9 +15,9 @@ include 'connexion.php';
           <table class="table table-striped caption-top">
                 <thead>
                   <tr>
-                    <th scope="col">Jour</th>
-                    <th scope="col">Matin</th>
-                    <th scope="col">Apres-midi</th>
+                    <th class="text-center" scope="col">Jour</th>
+                    <th class="text-center" scope="col">Matin</th>
+                    <th class="text-center" scope="col">Apres-midi</th>
                   </tr>
                 </thead>
 
@@ -30,9 +30,9 @@ include 'connexion.php';
                      ?>
 
                   <tr>
-                     <td scope="row"><?php echo $value['jour'];?></td>
-                     <td>
-                    <?php 
+                     <td class="text-center" scope="row"><?php echo $value['jour'];?></td>
+                     <td class="text-center">
+                    <?php
                      if($value['statut_am'] == 1 ){
                         echo $value['heure_debut_am'].' à ' .$value['heure_de_fin_am'];
                      }
@@ -41,21 +41,21 @@ include 'connexion.php';
                      } 
                      ?>
                      </td>
-                     <td>
-                   <?php 
+                     <td class="text-center">
+                   <?php
                      if($value['statut_pm'] == 1 ){
                         echo $value['heure_debut_pm'].' à ' .$value['heure_de_fin_pm'];
                      }
                      else {
                         echo "Fermé";
-                     } 
+                     }
                      ?>
-                  </td>                   
+                  </td>
       
                   </tr>
                   <?php
                       }
-                     ?>  
+                     ?>
                </tbody>
             </table>
         </section>
