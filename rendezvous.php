@@ -36,7 +36,7 @@ require 'connexion.php';
 
  
 
-        function validation_donnees($donnees){
+        function validationDonnees($donnees){
 
           $donnees = trim($donnees);
           $donnees = stripslashes($donnees);
@@ -45,19 +45,19 @@ require 'connexion.php';
           return $donnees;
           }
       
-          $civilite = validation_donnees($_POST['civilite']);
-          $immatriculation = validation_donnees($_POST['immatriculation']);
-          $nom = validation_donnees($_POST['nom']);
-          $prenom = validation_donnees($_POST['prenom']);
-          $telephone = validation_donnees($_POST['telephone']);
-          $email = validation_donnees($_POST['email']);
-          $prestation = validation_donnees($_POST['prestation']);
-          $creneaux = validation_donnees($_POST['creneaux']);
-          $message = validation_donnees($_POST['message']);
+          $civilite = validationDonnees($_POST['civilite']);
+          $immatriculation = validationDonnees($_POST['immatriculation']);
+          $nom = validationDonnees($_POST['nom']);
+          $prenom = validationDonnees($_POST['prenom']);
+          $telephone = validationDonnees($_POST['telephone']);
+          $email = validationDonnees($_POST['email']);
+          $prestation = validationDonnees($_POST['prestation']);
+          $creneaux = validationDonnees($_POST['creneaux']);
+          $message = validationDonnees($_POST['message']);
 
 
-          $reqInsert = "INSERT INTO public.rendez_vous (civilite, immatriculation, nom, prenom, telephone, email, prestation, message) 
-          values (:civilite, :immatriculation, :nom, :prenom, :telephone, :email, :prestation, :message)";
+          $reqInsert = "INSERT INTO public.rendez_vous (civilite, immatriculation, nom, prenom, telephone, email, prestation, creneaux, message, date_validation, statut)
+          values (:civilite, :immatriculation, :nom, :prenom, :telephone, :email, :prestation, :creneaux, :message, :date, :statut)";
           
           $tbr = $conn -> prepare($reqInsert);
           $save = $tbr -> execute ([
@@ -69,8 +69,11 @@ require 'connexion.php';
               ":telephone"=> $_POST['telephone'],
               ":email"=> $_POST['email'],
               ":prestation"=> $_POST['prestation'],
+              ":creneaux"=> $_POST['creneaux'],
               //":creneaux"=> $creneaux['creneaux'],//
               ":message"=> $_POST['message'],
+              ":date" =>date('Y-m-d h:m:s'),
+              ":statut"=> "En attente",
              // ":date" =>date('Y-m-d h:m:s'),
             
               ]);

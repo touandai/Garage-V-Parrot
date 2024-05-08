@@ -14,10 +14,11 @@ require 'menu.php';
 <main class="container">
 
 <section>
-    <?php 
+    <?php
         if(isset($_GET['action_suppression']) && ($_GET['action_suppression'] == 1)) {
     ?>
-    <div style="padding: 20px;color: #ffffff;background: red;text-align:center;">L'annonce a bien été supprimée avec succès !</div>
+    <div style="padding: 20px;color: #ffffff;background: red;text-align:center;">
+    L'annonce a bien été supprimée avec succès !</div>
     <?php
     }
     ?>
@@ -74,9 +75,9 @@ require 'menu.php';
                         }
                     ?>
                     <form method="POST" action="">
-                        <input type="hidden" name="id" value="<?php echo $value['id']; ?>" readonly=true>
+                        <input type="hidden" name="id" value="<?php echo $value['id'];?>" readonly="true">
 
-                          <button class="btn btn-sm btn-danger" type="submit" name="valider" 
+                          <button class="btn btn-sm btn-danger" type="submit" name="valider"
                           onclick="return confirm('Vous confirmez cette suppression <?php echo $value['id']; ?> ?')">supprimer</button>
                     </form>
                 </td>

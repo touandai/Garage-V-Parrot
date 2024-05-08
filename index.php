@@ -66,7 +66,7 @@ include 'connexion.php';
                 <?php
                     }
                 ?>
-				<h6 class="text-center"><a href="avis.php" class="text-center">Je donne mon avis</a></h6>
+				<h6 class="text-center"><a href="avis.php" class="text-center ancre">Je donne mon avis</a></h6>
                 </div>
         </aside>  
 
