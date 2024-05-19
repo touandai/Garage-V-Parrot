@@ -1,23 +1,23 @@
 * {
-    box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 html,
 body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 body {
-    overflow-y: scroll;
-    font-family: 'Quicksand', sans-serif;
+  overflow-y: scroll;
+  font-family: "Quicksand", sans-serif;
 }
 body a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .page-connexion {
   width: 300px;
@@ -25,7 +25,7 @@ body a {
   border-radius: 10px;
   padding: 10px;
   margin: 50px auto;
-  margin-bottom:180px;
+  margin-bottom: 180px;
 }
 .form-field {
   margin-bottom: 10px;
@@ -37,7 +37,7 @@ body a {
 }
 h1 {
   text-align: center;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 .btn input {
   padding: 10px;
@@ -55,7 +55,7 @@ h1 {
   color: #ff0000;
 }
 header {
-  background:#0b2020;
+  background: #0b2020;
   color: #ffffff;
   margin-bottom: 80px;
 }
@@ -95,37 +95,40 @@ header {
   -ms-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-p
-{
+p {
   font-weight: bold;
   font-size: larger;
 }
 /*exporter*/
 
-legend{
-  color:#0C273D;
+legend {
+  color: #0c273d;
 }
-.validation, .confirmation{
-font-weight: bolder;
-color: #008000;
-  margin-top:50px;
-  margin-bottom:100px;
+.validation,
+.confirmation {
+  font-weight: bolder;
+  color: #008000;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
-strong{
-  color:red;
+strong {
+  color: red;
 }
-.lien{
+.lien {
   text-decoration: none;
-  color:white;
+  color: white;
   border: 1px solid;
   padding: 10px;
   border-radius: 5px;
-  background-color:green;
+  background-color: green;
   font-weight: bolder;
 }
-.valide{
-  color:green;
+.valide {
+  color: green;
 }
-.invalide{
-  color:red;
+.invalide {
+  color: red;
+}
+.actif {
+  color: #02acac;
 }

@@ -33,7 +33,7 @@ foreach($resultat as $key => $value){
             <div>Marque: <em><?php echo $value['marque']; ?> </em></div>
             <div>Modele: <em><?php echo $value['modele'];  ?> </em></div>
             <div>Année: <em><?php echo $value['annee']; ?> </em></div>
-            <div>Kilometrage:<em><?php echo $value['Kilometre']; ?> </em></div>
+            <div>Kilometrage:<em><?php echo $value['kilometre']; ?> </em></div>
             <div>Prix: <em><?php echo $value['prix']; ?> </em></div>
             <div>Energie: <em><?php echo $value['energie']; ?> </em></div>
             <div><p>Date mise en circulation:<em><?php
@@ -54,9 +54,8 @@ foreach($resultat as $key => $value){
      </aside>
 
 <?php
-include 'footer.php';
+require 'footer.php';
 ?>
-
 
         <script>
         var slider = document.getElementById("slider_img");
@@ -78,4 +77,4 @@ include 'footer.php';
      </script>
 
  </body>
-</html>    
+</html>

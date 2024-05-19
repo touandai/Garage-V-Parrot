@@ -20,7 +20,7 @@ switch($environnement) {
 
 if(array_key_exists('valider',$_POST))  {
    //var_dump(date('Y-m-d h:m:s'));die;//
-       $erreur = []; 
+       $erreur = [];
        if(isset($_POST["nom"]) && empty($_POST["nom"])){
          $erreur['test_champ_nom']="Votre nom est obligatoire";
        }
@@ -48,7 +48,7 @@ if(array_key_exists('valider',$_POST))  {
 			
       // echo "Tous les champs sont bien remplis";die;//
 
-       $reqInsert = "INSERT INTO public.temoignages (nom, commentaires, note, date_avis, statut) 
+       $reqInsert = "INSERT INTO public.temoignages (nom, commentaires, note, date_avis, statut)
        values (:nom, :message, :note, :date, :statut)";
 
        $tbr = $conn -> prepare($reqInsert);
@@ -81,9 +81,9 @@ require 'nav-apropos.php';
      
 <main id="page-avis" class="container">
 
-                    <form id="avis" class="form" method="POST" action=""> 
+                    <form id="avis" class="form" method="POST" action="">
                     <fieldset>
-                             <legend><em>Laissez-nous votre avis</legend>     
+                             <legend><em>Laissez-nous votre avis</legend>
                               
                                   <p class="red">Les champs précédés d'asterix sont obligatoires *</p>   
                                   <div class="input-row">
