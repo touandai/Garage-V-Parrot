@@ -38,8 +38,8 @@ require 'menu.php';
                 </tr>
         </thead>
         <tbody>
-        <?php 
-            $req = "SELECT * FROM public.annonces";
+        <?php
+            $req = "SELECT * FROM public.annonces LIMIT 8";
             $tdr = $conn -> query($req);
             $resultat = $tdr -> fetchAll();
 
@@ -97,5 +97,4 @@ require 'menu.php';
 </main>
 
 <?php
-
 require 'commun/footer.php';

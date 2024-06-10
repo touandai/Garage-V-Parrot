@@ -1,9 +1,9 @@
 <?php 
 $title =' Accueil, Garage V. Parrot entretien mécanique, carosserie et vente voiture d\'occasion ';
 
-include 'header.php';
-include 'nav-apropos.php';
-include 'connexion.php';
+require 'header.php';
+require 'nav-apropos.php';
+require 'connexion.php';
  ?>
 <!--header-->
 <!--bandeau nav-->
@@ -16,25 +16,25 @@ include 'connexion.php';
                         <ul>
                             <li>Révision voiture</li>
                             <li>Vidange-Climatisation-Pneus</li>
-                            <li>Freinage-Amortisseurs-Courroies</li> 
+                            <li>Freinage-Amortisseurs-Courroies</li>
                         </ul>
-                    <em>Entretiens mécaniques... </em>  
+                    <em>Entretiens mécaniques... </em>
                         <a href="repmecanique.php">en savoir plus</a>
                     </p>
                 </article>
                 <article id="article2" class="container">
                     <a href="repcarrosserie.php"><img src="images/img-carrosserie.png"></a>
                     
-                    <p><em>Elle fait appel à différentes techniques (remplacement, débosselage, 
-                    redressage, 
-                    peinture, mastic, etc.)pour réparer les trous, rayures ou bosses sur 
+                    <p><em>Elle fait appel à différentes techniques (remplacement, débosselage,
+                    redressage,
+                    peinture, mastic, etc.)pour réparer les trous, rayures ou bosses sur
                     votre carrosserie.</em>
                     <ul>
                         <li>Le remplacement de la pièce</li>
                         <li>Le redressage - Le débosselage </li>
                     </ul>
                     <em>Réparation carrosserie... </em>
-                    <a href="repcarrosserie.php">en savoir plus</a> 
+                    <a href="repcarrosserie.php">en savoir plus</a>
                     </p>
                 </article>
      </main>
@@ -68,9 +68,12 @@ include 'connexion.php';
                 ?>
 				<h6 class="text-center"><a href="avis.php" class="text-center ancre">Je donne mon avis</a></h6>
                 </div>
-        </aside>  
+        </aside>
 
 
 
         <!--footer-->
-        <?php include 'footer.php'; ?>
+        <?php
+        require 'footer.php';
+        
+        ?>

@@ -11,6 +11,10 @@ require 'menu.php';
 
 
 if(array_key_exists('envoyer', $_POST)) {
+		 
+    $ImagesVoitures = explode('/', $_FILES['image']['type']);
+    $extensionImage = end($ImagesVoitures);
+    $nouveauNomImage = sha1(md5(time())) . "." . $extensionImage;
 
     if(isset($_POST['marque']) && empty($_POST['marque'])){
         header("location:?pages=ajout-annonce&marque=1");
@@ -40,12 +44,15 @@ if(array_key_exists('envoyer', $_POST)) {
         header("location:?pages=ajout-annonce&date_circulation=1");
         exit();
     }
+        if(false === move_uploaded_file($_FILES['image']['tmp_name'], "upload/images/" . $nouveauNomImage)) {
+        header('location:?pages=ajout-annonce&image=1');
+        exit();
+
+    }
         if(isset($_POST['description']) && empty($_POST['description'])){
         header("location:?pages=ajout-annonce&description=1");
         exit();
     }
-    
-
 
     function validation_donnees($donnees){
         $donnees = trim($donnees);
@@ -62,11 +69,10 @@ if(array_key_exists('envoyer', $_POST)) {
         $energie = validation_donnees($_POST['energie']);
         $date_circulation = validation_donnees($_POST['date_circulation']);
         $description = validation_donnees($_POST['description']);
-
-
-                $InsertAnnonce ='INSERT INTO public.annonces(marque, modele, annee, kilometre, prix, energie, date_circulations, description, date_publication)
-                values (:marque, :modele, :annee, :kilometre, :prix, :energie, :date_circulation, :description, :date)';
-
+		$image = $_FILES['image']['name'];
+        
+                $InsertAnnonce ='INSERT INTO public.annonces(marque, modele, annee, kilometre, prix, energie, description, date_circulations, date_publication, image)
+                values (:marque, :modele, :annee, :kilometre, :prix, :energie, :description, :date_circulation, :date, :image)';
                 
                 $reqInsertion = $conn -> prepare ($InsertAnnonce);
                 $save = $reqInsertion->execute([
@@ -80,38 +86,33 @@ if(array_key_exists('envoyer', $_POST)) {
                 ":date_circulation" => $date_circulation,
                 ":description" => $description,
                 ":date" =>date('Y-m-d h:m:s'),
+                ":image" => $nouveauNomImage,
 
                 ]);
                 if($save){
                     header('location:?pages=ajout-annonce&valider=1');
                 }
-
 }
 
 
 ?>
-
 <h1>Formulaire d'ajout des annonces </h1>
 
-
-
-
 <main class="container">
-<?php 
+    <?php
     if(isset($_GET['valider']) && ($_GET['valider'] == 1)) {
     ?>
-    <div style="padding: 20px;color: #ffffff;background: green;text-align:center;">Le statut est mis à jour avec succès !</div>
+    <div style="padding: 20px;color: #ffffff;background: green;text-align:center;">Enregistré avec succès !</div>
     <?php
     }
     ?>
-    
-<section class="container">
+    <section class="container">
 
-        <form method="POST" action="">
+        <form method="POST" action="" enctype="multipart/form-data">
             <fieldset>
                  <legend>Enregistrer une annonce</legend>
 
-                    <div class="mb-3">
+                    <div class="row mb-3">
                         <div class="col">
                             <label class="form-label"><b> Marque : *</b></label>
                             <select class="form-control" name="marque">
@@ -153,7 +154,7 @@ if(array_key_exists('envoyer', $_POST)) {
                             echo "<strong> Veuillez indiquer l'année !</strong>";
                             }
                             ?>
-                            </div>  
+                            </div>
                             <div class="col">
                                 <label class="form-label"><b> Kilometre : *</b></label>
                                 <input class="form-control" type="number" name="kilometre" maxlength="15">
@@ -161,7 +162,7 @@ if(array_key_exists('envoyer', $_POST)) {
                                 echo "<strong> Ce champ est obligatoire!</strong>";
                                 }
                                 ?>
-                            </div> 
+                            </div>
                     <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label"><b>Prix : *</b></label>
@@ -170,15 +171,14 @@ if(array_key_exists('envoyer', $_POST)) {
                                 echo "<strong>Ce champ est obligatoire!</strong>";
                                 }
                                 ?>
-                            </div>  
-
+                            </div>
                             <div class="col">
                                 <label class="form-label"><b> Energie : *</b></label>
                                 <select class="form-control" name="energie">
                                             <option value="">--Selectionner--</option>
                                             <option value="Diesel">Diesel</option>
                                             <option value="Essence">Essence</option>
-                               </select> 
+                               </select>
                             <?php if(isset($_GET['energie']) ==1){
                                 echo "<strong>Ce champ est obligatoire!</strong>";
                                 }
@@ -193,29 +193,34 @@ if(array_key_exists('envoyer', $_POST)) {
                                 echo "<strong>Ce champ est obligatoire!</strong>";
                                 }
                                 ?>
-                            </div>  
+                            </div>
 
                             <div class="col">
-                                <label class="form-label"><b> Description : *</b></label>
-                                <textarea class="form-control" name="description"></textarea>
-                                <?php if(isset($_GET['description']) ==1){
-                                echo "<strong> Ce champ est obligatoire!</strong>";
+                                <label class="form-label"><b> Image : *</b></label>
+                                <input class="form-control" type="file" maxlength="30" name="image">
+                                <?php if(isset($_GET['image']) == 1){
+                                echo "<strong> Choisir une photo!</strong>";
                                 }
                                 ?>
                             </div>
                     </div>
-                    <br>
-                    <div class="col text-center">
+									
+					<div>
+                        <label class="form-label"><b> Description : *</b></label>
+                        <textarea class="form-control" name="description"></textarea>
+                        <?php if(isset($_GET['description']) ==1){
+                        echo "<strong> Ce champ est obligatoire!</strong>";
+                        }
+                        ?>
+					</div>
+                    <div class="text-center p-3">
                         <button class="btn btn-primary" name="envoyer" id="envoyer" type="submit">Envoyer</button>
                     </div>
                     <br>
             </fieldset>
-        </form> 
-</section>
-
+        </form>
+    </section>
 </main>
 
-
 <?php
-
 require 'commun/footer.php';
