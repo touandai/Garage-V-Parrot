@@ -1,15 +1,11 @@
 <?php 
 $title ='Espace client';
 session_start();
-
 include 'header2.php'; 
 include 'connexion.php'; 
 
-
 //romaric.nganas@gmail.com
 //Romaric10
-
-
 
 if(array_key_exists('connexion',$_POST)){
 	
@@ -51,18 +47,7 @@ if(array_key_exists('connexion',$_POST)){
 
 include 'nav-apropos.php';
 ?>
-
-
 <!--header-->
- 
-     <div>
-        <?php 
-            if(isset($_SESSION['user_data'])) {
-            echo $_SESSION['user_data']['nom'] . ", connecté.";
-            }
-        
-        ?> 
-    </div>
 
 <br>
     <h2 class="text-center">Espace client</h2>

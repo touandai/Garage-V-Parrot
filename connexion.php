@@ -1,5 +1,4 @@
 <?php
-    
         $host = 'localhost';
         $dbname = 'GARAGEPARROT';
         $username = 'postgres';
@@ -16,5 +15,4 @@
         }catch (PDOException $e){
         echo $e->getMessage();
         }
-
 ?>

@@ -10,7 +10,8 @@
 <body>
 
 <div class="menu">
-    <a href="?pages=tableau-de-bord">Tableau de bord</a>
+
+    <a href="?pages=dashboard">Tableau de bord</a>
     <!-- Les annonces : on autorise l'administrateur et les employés à voir les informations -->
     <?php if(in_array($userConnecte['roles_id'], [1, 2])) : ?>
     <a href="?pages=liste-annonces">Annonces</a>

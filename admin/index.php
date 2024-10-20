@@ -1,24 +1,25 @@
 <?php
 //On démarre la session //
 session_start();
+require 'config/connexion.php';
 
-
-require '../connexion.php';
 
 //Racine du projet//
 $document_root ="Garage-V-Parrot";
 
-$pages = (isset($_GET['pages'])) ? $_GET['pages'] : "login";
-
-if(isset($_SESSION['user_data'])) {
-  $userConnecte = $_SESSION['user_data'];
+if(!isset($_SESSION['user_data'])) {
+  $page = 'login';
 }
-
+else{
+  $userConnecte = $_SESSION['user_data'];
+  $page = 'dashboard';
+}
+$pages = (isset($_GET['pages'])) ? $_GET['pages'] : "login";
 
 switch($pages) {
   /* Tableau de bord */
-  case 'tableau-de-bord':
-  default:   
+  case 'dashboard':
+  default:
     require 'pages/tableau-de-bord.php';
     break;
   /*connexion*/

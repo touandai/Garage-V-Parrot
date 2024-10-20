@@ -18,7 +18,6 @@
                    <li class="btn btn-danger"><a href="liste-voiture-occasion.php">Véhicules d'occasion</a></li>
                    <li class="btn btn-danger"><a href="rendezvous.php">Rendez-vous</a></li>
                    <li class="btn btn-danger"><a href="contact.php">Contact</a></li>
-                   <li class="btn btn-danger"><a href="compteperso.php">Mon compte</a></li>
                 </ul>
             </nav>
         </div>

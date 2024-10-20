@@ -51,7 +51,7 @@ require 'connexion.php';
 
             <div class="container">
                  <h5 class="text-center"><em>Temoignages et avis clients</em></h5>
-                        <?php 
+                        <?php
 
                             $req = "SELECT * FROM public.temoignages ORDER BY date_avis ASC LIMIT 3";
                             $tdr = $conn -> query($req);
